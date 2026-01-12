@@ -10,7 +10,7 @@ export default function Home() {
             </header>
             
             <h1 className="text-5xl font-bold">hi, i am <span className="bg-green-400">benjamin</span> julian noel</h1>
-            <p className="mt-4 text-lg">a passionate developer and music enthusiast. more specifically: python, JS, postgreSQL </p>
+            <p className="mt-4 text-lg">a passionate developer and music enthusiast. site in progress, stay tuned.</p>
             <Image
                 src="/images/selfie.jpg"
                 alt="benjie's selfie"
