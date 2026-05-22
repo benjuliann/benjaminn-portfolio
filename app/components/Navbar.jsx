@@ -8,8 +8,8 @@ export default function Navbar() {
     const pathname = usePathname()
     
     return (
-        <nav className="fixed top-0 left-0 right-0 flex justify-between items-center px-10 py-4 text-sm uppercase tracking-wide bg-zinc-50/80 dark:bg-gray-950/80 backdrop-blur-sm z-10">
-            <Link href="/" className="font-bold text-base normal-case hover:text-blue-400 transition-colors duration-200">
+        <nav className="dark:text-white fixed top-0 left-0 right-0 flex justify-between items-center px-10 py-4 text-sm uppercase tracking-wide bg-zinc-50/80 dark:bg-gray-950/80 backdrop-blur-sm z-10">
+            <Link href="/" className="hidden md:block font-bold text-base normal-case hover:text-blue-400 transition-colors duration-200">
                 benjulian.
             </Link>
             <div className="flex gap-6">
