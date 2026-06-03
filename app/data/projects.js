@@ -18,7 +18,7 @@ const projects = [
     description: "Trained a YOLOv11 computer vision model for autonomous vehicle navigation.",
     tech: ["YOLOv11", "Python"],
     image: "/images/AIVA.png",
-    projectLink: "https://www.instagram.com/p/DXNfsytj3Bg/",
+    projectLink: "https://www.linkedin.com/posts/benjuliannoel_sait-emergingtrends-studentinnovation-ugcPost-7450703963756167168-RJaC/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFGPJ20B-1KzWSSsgnffID8XKz6uaxWKSgM",
   },
   {
     title: "VibeMap",
@@ -32,7 +32,7 @@ const projects = [
     description: "Using Strudel to create real-time electronic music.",
     tech: ["Strudel", "TidalCycles"],
     image: "/images/strudel.png",
-    projectLink: "https://www.instagram.com/reel/DSw8WR-CShn/",
+    projectLink: "https://www.instagram.com/reel/DY8EN8syhVr/",
   },
     {
     title: "Find My Gourmet",
