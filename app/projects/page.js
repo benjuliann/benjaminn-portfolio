@@ -1,5 +1,5 @@
 import projects from "../data/projects.js";
-import ProjectCard from "../components/ProjectCard.jsx";
+import ProjectsGrid from "../components/ProjectsGrid.jsx";
 
 export const metadata = { 
   title: "Projects - Benjamin Julian Noel Portfolio", 
@@ -14,14 +14,7 @@ export default function Projects() {
             <h1 className="text-5xl font-bold tracking-tight">Projects</h1>
             <p className="mt-4 text-lg">Here are some of my favorite works!</p>
             
-            <div className="grid gap-6 mt-10 sm:grid-cols-2">
-                {projects.map((project) => (
-                    <ProjectCard
-                        key={project.title}
-                        {...project}
-                    />
-                ))}
-            </div>
+            <ProjectsGrid projects={projects} />
             <footer className="mt-16 text-sm text-zinc-500 ">
                 last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} <br/>
                 © 2026 benjulian noel.
