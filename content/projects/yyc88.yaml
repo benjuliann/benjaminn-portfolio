@@ -11,5 +11,5 @@ tech:
   - TailwindCSS
   - react-qr-code
 image: /images/projects/yyc88/image.png
-projectLink: yyc88.vercel.app
+projectLink: https://yyc88.vercel.app/
 position: 1
