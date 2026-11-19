@@ -1,0 +1,15 @@
+title: yyc88
+description: >-
+  A ski-jump game revitalizing the history of the 1988 Calgary Olympics.
+  Submission for MRUHacks.
+category: Software
+tech:
+  - React
+  - TypeScript
+  - Three.js
+  - Blender
+  - TailwindCSS
+  - react-qr-code
+image: /images/projects/yyc88/image.png
+projectLink: yyc88.vercel.app
+position: 1
