@@ -1,12 +1,12 @@
-title: "Pangasinan Society of Calgary"
-description: "WIP, Full-stack social/management platform for local Filipino community."
+title: Pangasinan Society of Calgary
+description: WIP, Full-stack social/management platform for local Filipino community.
 category: Software
 tech:
-  - "Next.js"
-  - "MySQL"
-  - "TailwindCSS"
-  - "Firebase"
-  - "Azure"
+  - Next.js
+  - MySQL
+  - TailwindCSS
+  - Firebase
+  - Azure
 image: /images/projects/pasoc/image.png
-projectLink: "https://linktr.ee/jbyrds"
-position: 1
+projectLink: https://linktr.ee/jbyrds
+position: 2
