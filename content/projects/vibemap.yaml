@@ -1,5 +1,7 @@
 title: VibeMap
-description: ' 2nd Place Winner of MEGABYTE MEGAHACKS 2026. Interactive geolocation web-app visualizing community emotions in real time.'
+description: >-
+  2nd Place Winner of MEGABYTE MEGAHACKS 2026. Interactive geolocation web-app
+  visualizing community emotions in real time.
 category: Software
 tech:
   - Next.js
