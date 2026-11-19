@@ -53,7 +53,7 @@ export default async function Home() {
             <section id="about" aria-labelledby="about-title" className="paper mt-28">
                 <div className="max-w-6xl mx-auto px-6 md:px-10 py-20 grid gap-6 md:grid-cols-12">
                     <SectionLabel id="about-title" className="md:col-span-4 [&>span]:text-ink-muted">about</SectionLabel>
-                    <p className="md:col-span-8 text-lg leading-relaxed max-w-2xl">Hi there! I&apos;m Benjamin, a software engineer, producer, and creative based in Calgary. Graduating from SAIT and incoming student at ULeth in 2026. My work lives at the intersection of full-stack development, cloud infrastructure, and visual design. Outside of code, I produce music and perform live, and was even brought back by my high school as an audio engineering resource. Most recently, my team placed 2nd at MegaHacks 2026.</p>
+                    <p className="md:col-span-8 text-lg leading-relaxed max-w-2xl">Hi there! I&apos;m Benjamin, a software developer, music producer, and creative based in Calgary. <br/><br/>I graduated from SAIT&apos;s Software Development program in 2026 and now studying Computer Science at the University of Lethbridge. My work lives at the intersection of full-stack development, cloud infrastructure, and visual design. <br/><br/>Outside of code, I produce and perform music, and was even brought back by my high school as an audio engineering resource.</p>
                 </div>
             </section>
         </main>
