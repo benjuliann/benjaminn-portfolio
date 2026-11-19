@@ -13,23 +13,20 @@ export default function ProjectsGrid({ projects }) {
 
     return (
         <>
-            <div className="flex flex-wrap gap-2 mt-8">
+            <div role="group" aria-label="Filter by category" className="flex flex-wrap gap-4 mt-12 border-b border-line pb-5 font-mono text-sm lowercase">
                 {categories.map((category) => (
                     <button
                         key={category}
                         onClick={() => setSelected(category)}
-                        className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors duration-200 ${
-                            selected === category
-                                ? "bg-blue-400 text-white"
-                                : "bg-zinc-200 text-zinc-700 hover:bg-zinc-300 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
-                        }`}
+                        aria-pressed={selected === category}
+                        className="px-1 text-muted hover:text-fg aria-pressed:text-fg aria-pressed:outline aria-pressed:outline-fg"
                     >
                         {category}
                     </button>
                 ))}
             </div>
 
-            <div className="grid gap-6 mt-6 sm:grid-cols-2">
+            <div className="grid gap-x-6 gap-y-10 mt-10 sm:grid-cols-2 lg:grid-cols-3">
                 {filtered.map((project) => (
                     <ProjectCard
                         key={project.title}

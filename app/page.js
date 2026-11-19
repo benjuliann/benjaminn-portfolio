@@ -1,41 +1,61 @@
-import Image from "next/image";
-//import Link from "next/link";
+import { getProjects } from "./data/projects.js";
+import ProjectCard from "./components/ProjectCard.jsx";
+import SectionLabel from "./components/SectionLabel.jsx";
 
-const scatteredPhotos = [
-    { src: "/images/PASOC.png", className: "top-12 left-0 w-36 h-28 -rotate-6" },
-    { src: "/images/VibeMap.png", className: "top-4 right-6 w-32 h-24 rotate-6" },
-    { src: "/images/eastside.png", className: "top-1/2 -translate-y-1/2 -left-6 w-28 h-20 rotate-12" },
-    { src: "/images/strudel.png", className: "bottom-28 left-8 w-32 h-24 rotate-3" },
-    { src: "/images/AIVA.png", className: "bottom-8 right-0 w-36 h-28 -rotate-3" },
-    { src: "/images/FindMyGourmet.png", className: "top-1/2 -translate-y-1/2 -right-6 w-28 h-20 -rotate-12" },
-];
+const roles = ["software engineer", "producer", "SAIT graduate", "UofL student"];
 
-export default function Home() {
+// Static, decorative oscilloscope line, like Strudel's ._scope(): a quiet lead-in, then the signal.
+const scope = Array.from({ length: 220 }, (_, i) => {
+    const t = i / 219;
+    const env = t < 0.12 ? 0.06 : Math.min(1, (t - 0.12) * 10) * (1 - (t - 0.12) * 0.6);
+    return Math.abs(env * (0.6 + 0.4 * Math.sin(i * 1.7) * Math.cos(i * 0.31)));
+});
+
+export default async function Home() {
+    const projects = await getProjects();
+
     return (
+        <main>
+            <section aria-labelledby="hero-title" className="max-w-6xl mx-auto px-6 md:px-10 pt-32 md:pt-40">
+                <h1 id="hero-title" className="text-5xl sm:text-7xl md:text-8xl font-semibold tracking-tight leading-[0.95]">
+                    Benjamin Julian Noel<span className="text-yellow">.</span>
+                </h1>
 
-        <main className="relative max-w-4xl mx-auto flex flex-col min-h-screen justify-center bg-zinc-50 dark:bg-gray-950 p-10 dark:text-white overflow-hidden">
+                <p className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-sm">
+                    {roles.map((role, i) => (
+                        <span key={role} className="contents">
+                            {i > 0 && <span aria-hidden="true" className="text-muted">/</span>}
+                            <span className="px-1 outline outline-fg">{role}</span>
+                        </span>
+                    ))}
+                    <span className="text-muted">— based in Calgary</span>
+                </p>
 
-            <div className="absolute inset-0 hidden md:block">
-                {scatteredPhotos.map(({ src, className }) => (
-                    <div
-                        key={src}
-                        className={`absolute ${className} shadow-lg rounded-md overflow-hidden border-4 border-white dark:border-gray-800 hover:scale-110 hover:z-20 transition-transform duration-300`}
-                    >
-                        <Image src={src} alt="" fill style={{ objectFit: "cover" }} />
-                    </div>
-                ))}
-            </div>
+                <svg aria-hidden="true" viewBox="0 0 440 40" preserveAspectRatio="none" className="mt-16 h-10 w-full text-fg">
+                    <path
+                        d={scope.map((v, i) => `M${i * 2} ${20 - v * 18}V${20 + v * 18}`).join("")}
+                        stroke="currentColor"
+                        strokeWidth="1.2"
+                        fill="none"
+                    />
+                </svg>
+            </section>
 
-            <div className="relative z-10">
-                <header className="text-5xl font-bold tracking-tight">Benjamin Julian Noel</header>
-                <h1 className="text-lg font-semibold mt-4 uppercase">Software Engineer / Producer / SAIT Graduate</h1>
-                <p className="mt-4 text-md">Hi there! I'm Benjamin, a software engineer, producer, and creative based in Calgary. Graduating from SAIT and incoming student at ULeth in 2026. My work lives at the intersection of full-stack development, cloud infrastructure, and visual design. Outside of code, I produce music and perform live, and was even brought back by my high school as an audio engineering resource. Most recently, my team placed 2nd at MegaHacks 2026.</p>
+            <section id="work" aria-labelledby="work-title" className="max-w-6xl mx-auto px-6 md:px-10 mt-20">
+                <SectionLabel id="work-title">work</SectionLabel>
+                <div className="mt-8 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+                    {projects.map((project) => (
+                        <ProjectCard key={project.slug} {...project} />
+                    ))}
+                </div>
+            </section>
 
-                <footer className="mt-16 text-sm text-zinc-500 items-center">
-                    last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} <br/>
-                    © 2026 benjulian noel.
-                </footer>
-            </div>
+            <section id="about" aria-labelledby="about-title" className="paper mt-28">
+                <div className="max-w-6xl mx-auto px-6 md:px-10 py-20 grid gap-6 md:grid-cols-12">
+                    <SectionLabel id="about-title" className="md:col-span-4 [&>span]:text-ink-muted">about</SectionLabel>
+                    <p className="md:col-span-8 text-lg leading-relaxed max-w-2xl">Hi there! I&apos;m Benjamin, a software engineer, producer, and creative based in Calgary. Graduating from SAIT and incoming student at ULeth in 2026. My work lives at the intersection of full-stack development, cloud infrastructure, and visual design. Outside of code, I produce music and perform live, and was even brought back by my high school as an audio engineering resource. Most recently, my team placed 2nd at MegaHacks 2026.</p>
+                </div>
+            </section>
         </main>
     );
 }

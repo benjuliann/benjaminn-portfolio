@@ -1,30 +1,28 @@
 import Image from "next/image";
+import Link from "next/link";
+import StationBadge from "./StationBadge.jsx";
 
-export default function ProjectCard({ title, description, tech = [], image, imageSrc, projectLink }) {
-    const preferred = image ?? imageSrc;
-    const safeImage = preferred && String(preferred).trim() !== "" ? preferred : "/globe.svg";
+// Image-led tile: the picture does the talking, details live on the project page.
+export default function ProjectCard({ number, slug, title, category, image }) {
+    const safeImage = image && String(image).trim() !== "" ? image : "/globe.svg";
 
     return (
-        <a href={projectLink} target="_blank" rel="noopener noreferrer" className="block rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <div className="relative h-48 w-full">
+        <Link href={`/projects/${slug}`} className="group block">
+            <div className="relative aspect-[4/3] w-full overflow-hidden bg-surface">
                 <Image
                     src={safeImage}
-                    alt={title}
+                    alt=""
                     fill
-                    style={{ objectFit: "cover", objectPosition: "center" }}
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                 />
             </div>
-            <div className="p-4 bg-white dark:bg-gray-800">
-                <h3 className="text-xl font-semibold mb-2">{title}</h3>
-                <p className="text-gray-600 dark:text-gray-300">{description}</p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                    {tech.map((t, index) => (
-                        <span key={index} className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">
-                            {t}
-                        </span>
-                    ))}
-                </div>
+            <div className="mt-3 flex items-center gap-3">
+                <StationBadge category={category} number={number} />
+                <h3 className="font-semibold tracking-tight leading-tight group-hover:underline underline-offset-4 decoration-1">
+                    {title}
+                </h3>
             </div>
-        </a>
+        </Link>
     );
 }

@@ -1,0 +1,9 @@
+title: "AI Traffic Sign Detection"
+description: "Trained a YOLOv11 computer vision model for autonomous vehicle navigation."
+category: Software
+tech:
+  - "YOLOv11"
+  - "Python"
+image: /images/projects/ai-traffic-sign-detection/image.png
+projectLink: "https://www.linkedin.com/posts/benjuliannoel_sait-emergingtrends-studentinnovation-ugcPost-7450703963756167168-RJaC/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFGPJ20B-1KzWSSsgnffID8XKz6uaxWKSgM"
+position: 3

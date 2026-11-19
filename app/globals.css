@@ -1,28 +1,79 @@
 @import "tailwindcss";
 
-/* @custom-variant dark (&:where(.dark, .dark *)); */
-
-
+/* Gruvbox, sampled from Benjamin's Strudel "warm" REPL theme. See DESIGN.md. */
 :root {
-  --background: #fafafa; /* zinc-50 — matches PageTransition */
-  --foreground: #171717;
+  --background: #282828;
+  --surface: #3c3836;
+  --line: #504945;
+  --fg: #ebdbb2;
+  --muted: #a89984;       /* 5.3:1 on background */
+  --dim: #7c6f64;         /* decorative only */
+  --aqua: #8ec07c;
+  --purple: #d3869b;
+  --yellow: #fabd2f;
+  --paper: #fbf1c7;       /* gruvbox light */
+  --ink: #3c3836;
+  --ink-muted: #665c54;   /* 5.8:1 on paper */
 }
 
 @theme inline {
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist);
+  --color-surface: var(--surface);
+  --color-line: var(--line);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-dim: var(--dim);
+  --color-aqua: var(--aqua);
+  --color-purple: var(--purple);
+  --color-yellow: var(--yellow);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --font-sans: var(--font-instrument-sans);
+  --font-mono: var(--font-jetbrains-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #030712; /* gray-950 — matches PageTransition dark:bg-gray-950 */
-    --foreground: #ededed;
-  }
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
 }
 
-/* Prevent flash of wrong background during page transitions */
 html, body {
   background-color: var(--background);
-  color: var(--foreground);
+  color: var(--fg);
+}
+
+/* Keep anchor targets clear of the fixed header */
+[id] {
+  scroll-margin-top: 5rem;
+}
+
+:focus-visible {
+  outline: 2px solid var(--yellow);
+  outline-offset: 3px;
+}
+
+/* Light paper sections */
+.paper {
+  background-color: var(--paper);
+  color: var(--ink);
+}
+
+.paper :focus-visible {
+  outline-color: var(--ink);
+}
+
+::selection {
+  background: var(--fg);
+  color: var(--background);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
 }

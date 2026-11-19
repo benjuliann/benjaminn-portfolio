@@ -1,35 +1,39 @@
 'use client'
 
 import Link from "next/link";
-import { FaGithub, FaLinkedin, FaInstagram, FaYoutube } from "react-icons/fa";
 import { usePathname } from 'next/navigation'
+
+const links = [
+    { href: "/projects", label: "work" },
+    { href: "/#about", label: "about" },
+    { href: "/#contact", label: "contact" },
+];
 
 export default function Navbar() {
     const pathname = usePathname()
-    
+
     return (
-        <nav className="dark:text-white fixed top-0 left-0 right-0 flex justify-between items-center px-10 py-4 text-sm uppercase tracking-wide bg-zinc-50/80 dark:bg-gray-950/80 backdrop-blur-sm z-10">
-            <Link href="/" className="hidden md:block font-bold text-base normal-case hover:text-blue-400 transition-colors duration-200">
-                benjulian.
-            </Link>
-            <div className="flex gap-6">
-                <Link href="/" className={pathname === '/' ? 'text-blue-400' : 'hover:text-blue-400'}>about</Link>
-                <Link href="/projects" className={pathname === '/projects' ? 'text-blue-400' : 'hover:text-blue-400'}>projects</Link>
-            </div>
-            <div className="flex gap-2 items-center">
-                <a href="https://github.com/benjuliann" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-6 h-6 hover:text-blue-400 transition-all duration-200 hover:scale-110" aria-label="GitHub">
-                    <FaGithub />
-                </a>
-                <a href="https://www.linkedin.com/in/benjuliannoel/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-6 h-6 hover:text-blue-400 transition-all duration-200 hover:scale-110" aria-label="LinkedIn">
-                    <FaLinkedin />
-                </a>
-                <a href="https://instagram.com/8enjulian" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-6 h-6 hover:text-blue-400 transition-all duration-200 hover:scale-110" aria-label="Instagram">
-                    <FaInstagram />
-                </a>
-                <a href="https://www.youtube.com/@8enjulian" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-6 h-6 hover:text-blue-400 transition-all duration-200 hover:scale-110" aria-label="YouTube">
-                    <FaYoutube />
-                </a>
-            </div>
-        </nav>
+        <header className="fixed top-0 left-0 right-0 z-30 bg-surface">
+            <nav aria-label="Primary" className="max-w-6xl mx-auto flex justify-between items-center h-12 px-6 md:px-10">
+                <Link href="/" aria-label="Benjamin Julian Noel, home" className="text-lg font-semibold tracking-tight">
+                    <span className="sm:hidden">bjn</span>
+                    <span className="hidden sm:inline">Benjamin julian noel</span>
+                    <span className="text-yellow">.</span>
+                </Link>
+                <ul className="flex gap-5 font-mono text-sm">
+                    {links.map(({ href, label }) => (
+                        <li key={href}>
+                            <Link
+                                href={href}
+                                aria-current={pathname === href || (href === "/projects" && pathname.startsWith("/projects/")) ? "page" : undefined}
+                                className="px-1 text-muted hover:text-fg aria-[current=page]:text-fg aria-[current=page]:outline aria-[current=page]:outline-fg"
+                            >
+                                {label}
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+            </nav>
+        </header>
     );
 }
