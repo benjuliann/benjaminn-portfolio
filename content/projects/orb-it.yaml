@@ -1,0 +1,18 @@
+title: Orb-it
+description: >-
+  An interactive map using NISAR satellite data that lets you watch Earth change
+  over time, with radar passes, floods, wildfires, and more. Submission for the
+  NASA Space Apps Challenge 2026.
+category: Software
+tech:
+  - React
+  - Typescript
+  - Vite
+  - Leaflet
+  - Zustand
+  - Python
+  - NASA data
+image: /images/projects/orb-it/image.png
+projectLink: >-
+  https://www.spaceappschallenge.org/2026/find-a-team/goofy-goobers2/?tab=project#:~:text=https%3A//orb%2Dit%2Dorcin.vercel.app/
+position: 3
