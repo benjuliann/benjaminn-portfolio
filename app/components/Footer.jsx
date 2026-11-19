@@ -1,11 +1,11 @@
 import { FaGithub, FaLinkedin, FaInstagram, FaYoutube } from "react-icons/fa";
 import SectionLabel from "./SectionLabel.jsx";
+import EmailReveal from "./EmailReveal.jsx";
 
 const socials = [
     { label: "github", href: "https://github.com/benjuliann", Icon: FaGithub },
     { label: "linkedin", href: "https://www.linkedin.com/in/benjuliannoel/", Icon: FaLinkedin },
     { label: "instagram", href: "https://instagram.com/8enjulian", Icon: FaInstagram },
-    { label: "youtube", href: "https://www.youtube.com/@8enjulian", Icon: FaYoutube },
 ];
 
 export default function Footer() {
@@ -23,10 +23,13 @@ export default function Footer() {
                             </a>
                         </li>
                     ))}
+                    <li>
+                        <EmailReveal />
+                    </li>
                 </ul>
                 <div className="mt-16 flex flex-wrap justify-between gap-4 font-mono text-xs text-muted">
                     <p>© {new Date().getFullYear()} Benjamin Julian Noel</p>
-                    <p>calgary</p>
+                    <p>Last updated: November 19, 2026</p>
                 </div>
             </div>
         </footer>
