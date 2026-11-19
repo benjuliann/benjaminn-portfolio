@@ -10,6 +10,7 @@ tech:
   - Blender
   - TailwindCSS
   - react-qr-code
+  - Vite
 image: /images/projects/yyc88/image.png
 projectLink: https://yyc88.vercel.app/
 position: 1
