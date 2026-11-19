@@ -1,10 +1,10 @@
-title: "VibeMap"
-description: "Interactive geolocation web-app visualizing community emotions in real time."
+title: VibeMap
+description: ' 2nd Place Winner of MEGABYTE MEGAHACKS 2026. Interactive geolocation web-app visualizing community emotions in real time.'
 category: Software
 tech:
-  - "Next.js"
-  - "Leaflet"
-  - "Firebase"
+  - Next.js
+  - Leaflet
+  - Firebase
 image: /images/projects/vibemap/image.png
-projectLink: "https://devpost.com/software/vibemap-r89y5l"
-position: 4
+projectLink: https://devpost.com/software/vibemap-r89y5l
+position: 6
