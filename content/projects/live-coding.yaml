@@ -1,9 +1,10 @@
-title: "Live-coding"
-description: "Using Strudel to create real-time electronic music."
+title: Live-coding
+description: Using Strudel to create real-time electronic music.
 category: Music
 tech:
-  - "Strudel"
-  - "TidalCycles"
+  - Strudel
+  - TidalCycles
+  - Ableton
 image: /images/projects/live-coding/image.png
-projectLink: "https://www.instagram.com/reel/DY8EN8syhVr/"
+projectLink: https://www.instagram.com/8enjulian/reel/Dfaw1EbJvUa
 position: 5
